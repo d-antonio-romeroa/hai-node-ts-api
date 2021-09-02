@@ -17,8 +17,10 @@ docker-compose up --build -d
 
 This project has th following endpoints:
 - http://127.0.0.1:3000/api/v1/byplate/:plateNo
+
 Sending a Get http request to this url where **plateNo** is the plate number of the car, you can get his ID on the response.
 
 - http://127.0.0.1:3000/api/v1/byid/:carId
+
 Sending a Get http request to this url where **carId** is the ID number of the car, you can get his plate number on the response.
 
