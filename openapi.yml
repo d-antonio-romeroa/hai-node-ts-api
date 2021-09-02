@@ -1,0 +1,91 @@
+swagger: "2.0"
+info:
+  description: "Esta api es un servicio REST para la consulta de patentes y/o ID de un auto."
+  version: "1.0.0"
+  title: "Cars Plates API"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "d.antonio.romeroa@gmail.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "localhost:3000"
+basePath: "/api/v1"
+schemes:
+- "http"
+paths:
+  /cars/byid/{carId}:
+    get:
+      tags:
+      - "cars"
+      summary: "Get Car's plate number by ID"
+      description: "For valid response try string plate number with value >= AAAA000 and <= ZZZZ999.        Values that include Ñ character will generate exceptions"
+      operationId: "getById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "carId"
+        in: "path"
+        description: "ID of the car that needs to be know his plate series"
+        required: true
+        type: "integer"
+        minimum: 1.0
+        format: "int32"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Car"
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Car not found"
+  /cars/byplate/{plateNo}:
+    get:
+      tags:
+      - "cars"
+      summary: "Get Car's ID by his plate number"
+      description: "For valid response try string plate number with value >= AAAA000 and <= ZZZZ999.        Values that include Ñ character will generate exceptions"
+      operationId: "getByPlate"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "plateNo"
+        in: "path"
+        description: "Plate number of the car that needs to be know his ID number"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Car"
+        "400":
+          description: "Invalid Plate number supplied"
+        "404":
+          description: "Plate number not found"
+
+definitions:
+  Car:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      plate:
+        type: "string"
+    xml:
+      name: "Car"
+  ApiResponse:
+    type: "object"
+    properties:
+      codeStatus:
+        type: "integer"
+        format: "int32"
+      method:
+        type: "string"
+      message:
+        type: "string"
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"

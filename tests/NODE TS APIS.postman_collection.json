@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "b38e3f5c-49da-45bb-b931-d712ea6a2a3f",
+		"name": "SPRING BOOT - NODE TS APIS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "NODE TS API",
+			"item": [
+				{
+					"name": "GET PLATE BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/cars/byid/1001",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cars",
+								"byid",
+								"1001"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET PLATE BY ID EXAMPLE",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/v1/cars/byid/1001",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"cars",
+										"byid",
+										"1001"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "76"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4c-EMrWIo4F7Vmxvj85KfCp4Kbh0o4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Sep 2021 14:32:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"method\": \"GET\",\n    \"message\": {\n        \"carId\": 1001,\n        \"plateNo\": \"AAAB000\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "GET ID BY PLATE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/cars/byplate/AZZZ999",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cars",
+								"byplate",
+								"AZZZ999"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET ID BY PLATE EXAMPLE",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/api/v1/cars/byplate/AZZZ999",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"cars",
+										"byplate",
+										"AZZZ999"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "80"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"50-A4wh2S0/RBRUK73y7xiLGO5WGwQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Sep 2021 14:20:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"method\": \"GET\",\n    \"message\": {\n        \"carId\": 17576000,\n        \"plateNo\": \"AZZZ999\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
